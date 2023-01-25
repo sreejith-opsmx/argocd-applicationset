@@ -6,8 +6,12 @@ spec:
   generators:
   - list:
       elements:
-      - namespace: engineering-dev
-      - namespace: engineering-prod
+      - cluster: engineering-dev
+        url: https://kubernetes.default.svc
+        namespace: engineering-dev
+      - cluster: engineering-prod
+        url: https://kubernetes.default.svc
+        namespace: engineering-prod
   template:
     metadata:
       name: '{{namespace}}-guestbook'
@@ -16,7 +20,7 @@ spec:
       source:
         repoURL: https://github.com/sreejith-opsmx/argocd-applicationset.git
         targetRevision: HEAD
-        path: examples/list-generator/guestbook/{{namespace}}
+        path: examples/list-generator/guestbook/{{cluster}}
       destination:
-        server: https://kubernetes.default.svc
+        server: '{{url}}'
         namespace: '{{namespace}}'
