@@ -14,7 +14,7 @@ spec:
         namespace: engineering-prod
   template:
     metadata:
-      name: '{{namespace}}-guestbook'
+      name: '{{cluster}}-guestbook'
     spec:
       project: default
       source:
