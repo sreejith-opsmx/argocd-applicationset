@@ -8,10 +8,10 @@ spec:
       elements:
       - cluster: engineering-dev
         url: https://kubernetes.default.svc
-        namespace : devns
+        namespace : engineering-dev
       - cluster: engineering-prod
         url: https://kubernetes.default.svc
-        namespace : prodns
+        namespace : engineering-prod
   template:
     metadata:
       name: '{{cluster}}-guestbook'
