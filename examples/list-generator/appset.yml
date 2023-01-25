@@ -14,7 +14,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/argoproj/applicationset.git
+        repoURL: https://github.com/sreejith-opsmx/argocd-applicationset.git
         targetRevision: HEAD
         path: examples/list-generator/guestbook/{{namespace}}
       destination:
