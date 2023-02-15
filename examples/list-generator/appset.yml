@@ -12,6 +12,9 @@ spec:
       - cluster: engineering-prod
         url: https://kubernetes.default.svc
         namespace: engineering-prod
+      - cluster: engineering-staging
+        url: https://kubernetes.default.svc
+        namespace: default        
   template:
     metadata:
       name: '{{cluster}}-guestbook'
